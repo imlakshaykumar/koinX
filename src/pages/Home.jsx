@@ -1,9 +1,9 @@
-import { About } from "../components/About"
+import { Main } from "../components/Main"
 
 export const Home = () => {
     return (
         <>
-            <About />
+            <Main />
         </>
     )
 }
