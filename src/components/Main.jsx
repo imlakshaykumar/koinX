@@ -1,3 +1,4 @@
+// import Chart from "./Chart"
 import { GetStarted } from "./GetStarted"
 
 export const Main = () => {
@@ -6,6 +7,7 @@ export const Main = () => {
             <div className="border-2 border-black w-2/3">
 
                 <p className="p-10">1</p>
+                {/* <Chart /> */ }
             </div>
             <div className="w-1/3">
                 <GetStarted />
