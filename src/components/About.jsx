@@ -1,4 +1,4 @@
-import image from '../assets/react.svg'
+import image from '../assets/getStarted.png'
 
 export const About = () => {
     return (
@@ -18,22 +18,22 @@ export const About = () => {
                 <div>
                     <h3 className='font-bold text-xl mt-5'>Already holding bitcoin?</h3>
                     <div className="flex flex-row items-center justify-center gap-10 p-5 mb-5 border-b border-[#aeadaf]">
-                        <div className='flex items-center gap-5 bg-blue-300 rounded-2xl p-4'>
-                            <div className='max-w-fit object-cover block border-2 border-[#aeadaf]'>
+                        <div className='flex items-center gap-5 bg-blue-100 rounded-2xl p-4'>
+                            <div className='max-w-fit object-cover block'>
                                 <img src={ image } alt="" className=' w-40' />
                             </div>
                             <div>
-                                <p className='text-3xl text-[#f1f1f3]' >Calculate your Profits</p>
-                                <button className='bg-[#f1f1f3] capitalize py-2 px-4 rounded-lg'>check now</button>
+                                <p className='text-3xl mb-2' >Calculate your Profits</p>
+                                <button className='bg-[#b1b1b6] capitalize py-2 px-4 rounded-lg'>check now</button>
                             </div>
                         </div>
-                        <div className='flex items-center gap-5 bg-red-300 rounded-2xl p-4'>
-                            <div className='max-w-fit object-cover block border-2 border-[#aeadaf]'>
+                        <div className='flex items-center gap-5 bg-red-100 rounded-2xl p-4'>
+                            <div className='max-w-fit object-cover block'>
                                 <img src={ image } alt="" className=' w-40' />
                             </div>
                             <div>
-                                <p className='text-3xl text-[#f1f1f3]' >Calculate your Profits</p>
-                                <button className='bg-[#f1f1f3] capitalize py-2 px-4 rounded-lg'>check now</button>
+                                <p className='text-3xl mb-2'>Calculate your Profits</p>
+                                <button className='bg-[#b1b1b6] capitalize py-2 px-4 rounded-lg'>check now</button>
                             </div>
                         </div>
                     </div>
