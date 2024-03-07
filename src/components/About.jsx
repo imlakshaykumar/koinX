@@ -2,7 +2,7 @@ import image from '../assets/react.svg'
 
 export const About = () => {
     return (
-        <div className='bg-white rounded-xl'>
+        <div className='bg-white rounded-xl p-4'>
             <h3 className='font-bold text-xl mb-2'>About Bitcoin</h3>
             <div className='text-base'>
                 <div className='border-b border-[#adaeaf] pb-3 mb-3'>

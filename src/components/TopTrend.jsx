@@ -40,12 +40,12 @@ export const TopTrend = () => {
                             <div key={ index } className="flex justify-between w-full items-center mt-3">
                                 <div className="flex items-center justify-start">
                                     <div className="block object-contain">
-                                        <img src={ coin.item.small } alt="coin logo" className=" rounded-full w-8" />
+                                        <img src={ coin.item.small } alt="coin logo" className=" rounded-full w-8 mr-2" />
                                     </div>
                                     <p>{ coin.item.name }({ coin.item.symbol })</p>
                                 </div>
                                 <div className="">
-                                    <p className={ `border-2 ${coin.isProfit ? 'border-green-600 bg-green-300 rounded-sm py-1 px-2' : 'border-red-600 bg-red-300 py-1 px-2 rounded-sm'}` }>{ coin.usdChange }%</p>
+                                    <p className={ `border-2 text-xs rounded-md py-1 px-2 ${coin.isProfit ? 'border-green-600 bg-green-300' : 'border-red-600 bg-red-300'}` }>{ coin.usdChange }%</p>
                                 </div>
                             </div>
                         )

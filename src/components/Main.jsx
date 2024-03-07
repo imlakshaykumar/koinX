@@ -7,7 +7,7 @@ import { Tokenomics } from './Tokenomics'
 export const Main = () => {
     return (
         <div className="flex gap-5 mt-6 w-[1500px] mx-auto">
-            <div className="border-2 border-black w-2/3">
+            <div className="w-2/3">
                 <About />
                 <Tokenomics />
                 <Team />
