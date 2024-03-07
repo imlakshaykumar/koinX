@@ -27,7 +27,7 @@ export const DonutChart = () => {
     };
 
     return (
-        <div className='flex items-center justify-start w-[50%]'>
+        <div className='flex items-center justify-start w-[300px] h-[300px]'>
             <Doughnut data={ data } options={ options } />
         </div>
     );

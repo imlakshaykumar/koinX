@@ -141,7 +141,7 @@ export const FooterLike = () => {
                                     </div>
                                     <p className="w-1/2 overflow-hidden text-sm my-2">{ coin.item.data.price }</p>
                                     <div className="object-contain block w-fit">
-                                        <img src={ coin.item.data.sparkline } alt="" className="" />
+                                        <img src={ coin.item.data.sparkline } alt="" className="block" />
                                     </div>
                                 </div>
                                 // </div >
