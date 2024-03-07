@@ -1,0 +1,27 @@
+/* FooterLike.css */
+
+/* Style for Slick carousel arrows */
+.slick-prev,
+.slick-next {
+    font-size: 34px;
+    /* z-index: 1111; */
+    /* Darker color for the arrows */
+}
+
+.slick-next::before,
+.slick-prev::before {
+    /* z-index: 1111; */
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    color: black;
+}
+
+/* Adjust spacing between carousel items */
+.slider-container {
+    margin-left: -10px;
+    margin-right: -10px;
+}
