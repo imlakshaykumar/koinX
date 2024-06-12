@@ -1,5 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { TiArrowSortedUp } from "react-icons/ti";
+import { TiArrowSortedDown } from "react-icons/ti";
+
 
 export const TopTrend = () => {
     const [trendData, setTrendData] = useState([]);
@@ -43,8 +46,20 @@ export const TopTrend = () => {
                                     </div>
                                     <p className="text-sm">{ coin.item.name }({ coin.item.symbol })</p>
                                 </div>
-                                <div className="rounded-md w-1/5 text-center">
-                                    <p className={ `border-2 text-xs rounded-md py-2 ${coin.isProfit ? 'border-green-300 bg-green-200' : 'border-red-300 bg-red-200'}` }>{ coin.usdChange }%</p>
+                                <div className="rounded-md w-1/4 text-center">
+                                    <p className={ `border-2 text-sm rounded-md py-2 flex justify-center items-center ${coin.isProfit ? 'border-green-300 bg-green-200' : 'border-red-300 bg-red-200'}` }>
+                                        { coin.isProfit ?
+                                            (
+                                                <div className="flex items-center text-green-700">
+                                                    <TiArrowSortedUp className="text-lg" /> { coin.usdChange }%
+                                                </div>
+                                            ) : (
+                                                <div className="flex items-center text-red-700">
+                                                    <TiArrowSortedDown className="text-lg" /> { coin.usdChange }%
+                                                </div>
+                                            )
+                                        }
+                                    </p>
                                 </div>
                             </div>
                         )

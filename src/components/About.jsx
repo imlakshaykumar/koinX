@@ -35,7 +35,7 @@ export const About = () => {
                                 <img src={ image } alt="" className='w-full h-full rounded-xl' />
                             </div>
                             <div>
-                                <p className='text-2xl mb-4 text-[#fff] font-bold'>Calculate your Profits</p>
+                                <p className='text-2xl mb-4 text-[#fff] font-bold'>Calculate your tax liability</p>
                                 <button className='bg-[#fff] capitalize p-2 rounded-lg text-sm font-semibold flex items-center justify-between'>
                                     check now <span className='ml-2 text-lg' ><GoArrowRight /></span>
                                 </button>
