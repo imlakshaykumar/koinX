@@ -120,7 +120,9 @@ export const FooterSlider = () => {
                                         <img src={ coin.item.small } alt="coin logo" className=" rounded-full w-8" />
                                     </div>
                                     <p>{ coin.item.symbol }</p>
-                                    <p className={ `border-2 ${coin.isProfit ? 'border-green-300 bg-green-200 rounded-sm text-xs py-1 px-2' : 'border-red-300 bg-red-200 py-1 px-2 rounded-sm text-xs'}` }>{ coin.usdChange }%</p>
+                                    <p className={ `border-2 ${coin.isProfit ? 'border-green-300 bg-green-200 rounded-sm text-xs py-1 px-2' : 'border-red-300 bg-red-200 py-1 px-2 rounded-sm text-xs'}` }>
+                                        { coin.isProfit ? `+${coin.usdChange}` : `${coin.usdChange}` }%
+                                    </p>
                                 </div>
                                 <p className="w-full text-sm mt-2 mb-4">${ parseFloat(coin.item.data.price).toFixed(5) }</p>
                                 <div className="object-contain block w-full">
