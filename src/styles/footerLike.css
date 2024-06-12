@@ -15,13 +15,21 @@
     width: 40px;
     height: 40px;
     padding: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 50%;
     color: black;
 }
 
 /* Adjust spacing between carousel items */
-.slider-container {
-    margin-left: -10px;
-    margin-right: -10px;
+.slider-container div {
+    margin: 0 5px;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    max-width: 15rem;
 }

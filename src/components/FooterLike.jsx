@@ -67,44 +67,42 @@ export const FooterLike = () => {
         slidesToScroll: 5,
         initialSlide: 0,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
-        // responsive: [
-        //     {
-        //         breakpoint: 1024,
-        //         settings: {
-        //             slidesToShow: 3,
-        //             slidesToScroll: 3,
-        //             infinite: true,
-        //             dots: true
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 600,
-        //         settings: {
-        //             slidesToShow: 2,
-        //             slidesToScroll: 2,
-        //             initialSlide: 2
-        //         }
-        //     },
-        //     {
-        //         breakpoint: 480,
-        //         settings: {
-        //             slidesToShow: 1,
-        //             slidesToScroll: 1
-        //         }
-        //     }
-        // ]
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            }
+        ]
     };
     return (
         <div className="w-full bg-white mx-auto flex flex-col gap-5 pt-5 pb-16 mt-14">
-            <div className=" w-[1250px] mx-auto slider-container">
+            <div className=" w-[1400px] mx-auto slider-container">
                 <h3 className=" text-xl font-medium pb-5 mt-10">You may also like</h3>
                 <Slider { ...settings }>
                     {
                         coinData && coinData.map((coin, index) => {
                             return (
                                 // <div key={ index } className="w-fit" >
-                                <div className="flex flex-col border-2 border-[#f1f1f3] rounded-lg p-3 items-center" key={ index } >
+                                <div className="flex flex-col border-2 bg-white border-[#f1f1f3] rounded-lg p-3 items-center card" key={ index } >
                                     <div className="flex items-center justify-start">
                                         <div className="block object-contain">
                                             <img src={ coin.item.small } alt="coin logo" className=" rounded-full w-8" />
@@ -124,14 +122,14 @@ export const FooterLike = () => {
                 </Slider>
             </div >
 
-            <div className=" w-[1250px] mx-auto slider-container">
+            <div className=" w-[1400px] mx-auto slider-container">
                 <h3 className=" text-xl font-medium pb-5 mt-10">Trending Coins</h3>
                 <Slider { ...settings }>
                     {
                         coinData && coinData.map((coin, index) => {
                             return (
                                 // <div key={ index } className="w-fit" >
-                                <div className="flex flex-col border-2 border-[#f1f1f3] rounded-lg p-3 items-center" key={ index } >
+                                <div className="flex flex-col border-2 border-[#f1f1f3] rounded-lg p-3 items-center card" key={ index } >
                                     <div className="flex items-center justify-start">
                                         <div className="block object-contain">
                                             <img src={ coin.item.small } alt="coin logo" className=" rounded-full w-8" />
