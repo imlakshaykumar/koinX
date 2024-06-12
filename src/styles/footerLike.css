@@ -22,7 +22,7 @@
 
 /* Adjust spacing between carousel items */
 .slider-container div {
-    margin: 0 5px;
+    margin: 0 2px;
 }
 
 .slick-track {
