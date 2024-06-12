@@ -1,29 +1,25 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import react from '../assets/react.svg';
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+
+// ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 
 export const Sentiment = () => {
-    // eslint-disable-next-line no-unused-vars
-    const [data, setData] = useState({
-        labels: ['Sell', 'Buy', 'Hold'],
-        datasets: [
-            {
-                data: [20, 30, 50], // Sample data (you can replace this with actual data)
-                backgroundColor: ['#FF5733', '#2ECC71', '#FFC300'], // Red, Green, Orange
-                hoverBackgroundColor: ['#FF5733', '#2ECC71', '#FFC300'],
-            },
-        ],
-    });
 
-    const updatedData = {
-        labels: data.labels,
-        datasets: [
-            {
-                data: data.datasets[0].data,
-                backgroundColor: data.datasets[0].backgroundColor,
-                hoverBackgroundColor: data.datasets[0].hoverBackgroundColor,
-            },
-        ],
+
+    const data = {
+        labels: ['Sell', 'Buy', 'Hold'],
+        datasets: [{
+            // label: 'Poll',
+            data: [40, 30, 30],
+            backgroundColor: ['red', 'green', 'orange'],
+            borderColor: ['red', 'green', 'orange']
+        }]
     };
 
     const options = {
@@ -32,10 +28,39 @@ export const Sentiment = () => {
                 position: 'right',
                 labels: {
                     boxWidth: 20,
-                    usePointStyle: true,
-                },
+                    // usePointStyle: true;
+                    font: {
+                        size: 15,
+                        weight: 'bold'
+                    },
+                    color: '#222',
+                    generateLabels: (chart) => {
+                        return chart.data.labels.map((label, index) => {
+                            const value = chart.data.datasets[0].data[index];
+                            return {
+                                text: `${label}: ${value}`,
+                                fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                strokeStyle: chart.data.datasets[0].borderColor[index],
+                                // lineWidth: 3,
+                            };
+                        });
+                    }
+                }
             },
+            // datalabels: {
+            //     formatter: (value, context) => {
+            //         value = context.chart.data.datasets[0].data[context.dataIndex];
+            //         return `${context.chart.data.labels[context.dataIndex]}: ${value}`;
+            //     },
+            //     color: '#fff',
+            //     font: {
+            //         weight: 'bold'
+            //     },
+            //     align: 'start',
+            //     anchor: 'end'
+            // }
         },
+        cutout: '0%',
     };
 
     return (
@@ -62,13 +87,8 @@ export const Sentiment = () => {
 
                 <div>
                     <h3 className='font-bold text-lg p-1 mb-2'>Analyst Estimates</h3>
-                    <div style={ { width: '200px', height: '200px' } } className='flex items-center justify-around'>
-                        <Pie data={ updatedData } options={ options } className='text-lg' />
-                        {/* <div className="labels">
-                            <div className="label red">Sell - { percentages[0] }%</div>
-                            <div className="label green">Buy - { percentages[1] }%</div>
-                            <div className="label orange">Hold - { percentages[2] }%</div>
-                        </div> */}
+                    <div style={ { width: '100%', height: '300px' } } className='flex items-center justify-start'>
+                        <Pie data={ data } options={ options } />
                     </div>
                 </div>
             </div>

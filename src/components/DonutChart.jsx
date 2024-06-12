@@ -27,6 +27,17 @@ export const DonutChart = () => {
                         weight: 'bold'
                     },
                     color: '#222',
+                    generateLabels: (chart) => {
+                        return chart.data.labels.map((label, index) => {
+                            const value = chart.data.datasets[0].data[index];
+                            return {
+                                text: `${label}: ${value}`,
+                                fillStyle: chart.data.datasets[0].backgroundColor[index],
+                                strokeStyle: chart.data.datasets[0].borderColor[index],
+                                // lineWidth: 3,
+                            };
+                        });
+                    }
                 }
             },
             // datalabels: {
