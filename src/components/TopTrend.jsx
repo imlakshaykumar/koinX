@@ -27,8 +27,7 @@ export const TopTrend = () => {
 
     useEffect(() => {
         topData();
-    }, []); // Empty dependency array to run the effect only once
-
+    }, []);
 
     return (
         <>
@@ -38,14 +37,14 @@ export const TopTrend = () => {
                     trendData && trendData.map((coin, index) => {
                         return (
                             <div key={ index } className="flex justify-between w-full items-center mt-3">
-                                <div className="flex items-center justify-start">
+                                <div className="flex gap-2 items-center justify-start w-full py-1 px-3">
                                     <div className="block object-contain">
                                         <img src={ coin.item.small } alt="coin logo" className=" rounded-full w-8 mr-2" />
                                     </div>
                                     <p className="text-sm">{ coin.item.name }({ coin.item.symbol })</p>
                                 </div>
-                                <div className="">
-                                    <p className={ `border-2 text-xs rounded-md py-1 px-2 ${coin.isProfit ? 'border-green-600 bg-green-300' : 'border-red-600 bg-red-300'}` }>{ coin.usdChange }%</p>
+                                <div className="rounded-md w-1/5 text-center">
+                                    <p className={ `border-2 text-xs rounded-md py-2 ${coin.isProfit ? 'border-green-300 bg-green-200' : 'border-red-300 bg-red-200'}` }>{ coin.usdChange }%</p>
                                 </div>
                             </div>
                         )
