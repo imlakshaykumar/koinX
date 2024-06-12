@@ -1,7 +1,8 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Legend);
 
 export const DonutChart = () => {
     const data = {
@@ -20,14 +21,33 @@ export const DonutChart = () => {
                 position: 'right',
                 labels: {
                     boxWidth: 10,
-                    usePointStyle: true
+                    usePointStyle: true,
+                    font: {
+                        size: 12,
+                        weight: 'bold'
+                    },
+                    color: '#222',
                 }
-            }
-        }
+            },
+            // datalabels: {
+            //     formatter: (value, context) => {
+            //         // console.log(context.chart.data.datasets[0].data[context.dataIndex])
+            //         return `${context.chart.data.labels[context.dataIndex]}: ${context.chart.data.datasets[0].data[context.dataIndex]}`;
+            //     },
+            //     color: '#fff',
+            //     font: {
+            //         weight: 'bold'
+            //     },
+            //     align: 'start',
+            //     anchor: 'end'
+            // }
+        },
+        cutout: '70%',
     };
 
     return (
-        <div className='flex items-center justify-start w-[300px] h-[300px]'>
+        <div className='flex items-center justify-start w-[300px] h-[300px] md:w-[400px] md:h-[400px]'>
+            {/* <Doughnut data={ data } options={ options } plugins={ [ChartDataLabels] } /> */ }
             <Doughnut data={ data } options={ options } />
         </div>
     );
